@@ -26,4 +26,95 @@ body {
 
 /* Hero Section */
 header.bg-light {
-  background
+  background: linear-gradient(120deg, #ffe0e6, #fdfbfb);
+}
+
+header h1 {
+  color: #222;
+  margin-bottom: 15px;
+}
+
+header .btn-primary {
+  background-color: #ff4c68;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+header .btn-primary:hover {
+  background-color: #e53a5f;
+}
+
+/* Carousel */
+.carousel-inner img {
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Product Section */
+.card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.card .price {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Section Titles */
+h2, h4 {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #fff;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .carousel-inner img {
+    height: 250px;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+}
