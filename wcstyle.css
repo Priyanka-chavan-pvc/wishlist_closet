@@ -1,7 +1,7 @@
 /* Global styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa;
+  background-color: red;
   color: #333;
   line-height: 1.6;
 }
@@ -41,7 +41,7 @@ header .btn-primary {
 }
 
 header .btn-primary:hover {
-  background-color: #e53a5f;
+  background-color: pink;
 }
 
 /* Carousel */
