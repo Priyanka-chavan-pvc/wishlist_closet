@@ -16,6 +16,6 @@ document.getElementById("place-order").addEventListener("click", function() {
   localStorage.removeItem("cart");
 
   // Redirect to receipt page
-  window.location.href = "receipt.html";
+  window.location.href = "reciept.html";
 });
 
