@@ -1,13 +1,18 @@
-document.getElementById('place-order').addEventListener('click', function () {
-  if (cart.length === 0) {
-    alert('Your cart is empty!');
+document.getElementById("place-order").addEventListener("click", function() {
+  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cartItems.length === 0) {
+    alert("Your cart is empty!");
     return;
   }
 
-  // Store cart data
-  localStorage.setItem('wishlistCart', JSON.stringify(cart));
-  localStorage.setItem('lastOrder', JSON.stringify(cart));
-  
-  // Redirect to checkout page
-  window.location.href = 'checkout.html';
+  // Save order data in localStorage (simulate saving order)
+  localStorage.setItem("latestOrder", JSON.stringify(cartItems));
+
+  // Clear the cart
+  localStorage.removeItem("cart");
+
+  // Redirect to receipt page
+  window.location.href = "receipt.html";
 });
+
