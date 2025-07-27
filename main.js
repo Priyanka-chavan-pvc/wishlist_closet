@@ -1,4 +1,7 @@
 document.getElementById("place-order").addEventListener("click", function() {
+  alert("Order placed!");
+});
+document.getElementById("place-order").addEventListener("click", function() {
   const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
   if (cartItems.length === 0) {
