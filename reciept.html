@@ -1,55 +1,26 @@
-<!-- receipt.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
   <title>Order Receipt</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-<body class="bg-light">
-  <div class="container mt-5 p-4 bg-white rounded shadow">
-    <h2>🎉 Thank You for Your Purchase!</h2>
-    <p>Your order has been placed successfully.</p>
-    <hr />
-    <h4>Order Summary:</h4>
-    <ul id="receipt-list" class="list-group mb-3"></ul>
-    <h5>Total Paid: ₹<span id="receipt-total">0</span></h5>
-
-    <a href="index.html" class="btn btn-primary mt-3">Return to Home</a>
-  </div>
+<body>
+  <h2>Order Placed Successfully!</h2>
+  <p>Here is your receipt:</p>
+  <ul id="order-details"></ul>
 
   <script>
-  const orderData = JSON.parse(localStorage.getItem("latestOrder")) || [];
-const container = document.getElementById("order-details");
+    const order = JSON.parse(localStorage.getItem("latestOrder")) || [];
+    const list = document.getElementById("order-details");
 
-if (orderData.length === 0) {
-  container.innerHTML = "<p>No recent order found.</p>";
-} else {
-  container.innerHTML = `
-    <h2>Thank you for your order!</h2>
-    <ul>
-      ${orderData.map(item => `<li>${item.name} - ₹${item.price}</li>`).join("")}
-    </ul>
-  `;
-}
-
-
-    const cartData = JSON.parse(localStorage.getItem('lastOrder')) || [];
-    const list = document.getElementById('receipt-list');
-    let total = 0;
-
-    cartData.forEach(item => {
-      const li = document.createElement('li');
-      li.className = "list-group-item d-flex justify-content-between";
-      li.textContent = `${item.name} (x${item.qty})`;
-      const span = document.createElement('span');
-      span.textContent = `₹${item.qty * item.price}`;
-      li.appendChild(span);
-      list.appendChild(li);
-      total += item.qty * item.price;
-    });
-
-    document.getElementById('receipt-total').textContent = total;
+    if (order.length === 0) {
+      list.innerHTML = "<li>No order found.</li>";
+    } else {
+      order.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - ₹${item.price}`;
+        list.appendChild(li);
+      });
+    }
   </script>
 </body>
 </html>
