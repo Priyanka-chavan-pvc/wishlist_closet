@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="wcstyle.css" />
 
   <title>Checkout - Wishlist Closet</title>
 </head>
@@ -32,7 +32,7 @@
 
       localStorage.setItem("latestOrder", JSON.stringify(cart));
       localStorage.removeItem("cart");
-      window.location.href = "receipt.html";
+      window.location.href = "reciept.html";
     });
   </script>
   <!-- Button -->
@@ -41,7 +41,7 @@
 <!-- Script -->
 <script>
   document.getElementById("place-order").addEventListener("click", function () {
-    window.location.href = "receipt.html"; // Redirects to receipt page
+    window.location.href = "reciept.html"; // Redirects to receipt page
   });
 </script>
 
