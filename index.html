@@ -6,31 +6,7 @@
   <title>Wishlist closet</title>
   <!-- Bootstrap CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
- <link rel="stylesheet" href="wcstyle.css" />
 </head>
-  <!-- jQuery CDN -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  
-<button onclick="window.location.href='checkout.html'">Go to Checkout</button>
-
-<script>
-  document.getElementById("place-order").addEventListener("click", function() {
-  alert("Order placed!");
-});
-
-  $('#enquiryForm').on('submit', function (e) {
-    e.preventDefault();
-    const name = $('#name').val();
-    const email = $('#email').val();
-    const message = $('#message').val();
-
-    console.log("Enquiry Received:", { name, email, message });
-
-    alert('Thank you for your enquiry, ' + name + '! We will contact you soon.');
-    this.reset(); // Clear form
-  });
-</script>
-
 <body>
 
 <!-- Navbar -->
@@ -110,8 +86,7 @@
             <div class="card-body">
               <h5 class="card-title">Shepherd check white</h5>
               <p class="card-title">"Classic white checks for a crisp, clean look."</p>
-              <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-
+              <p class="card-text">₹400</p>
               
             </div>
           </div>
@@ -124,8 +99,7 @@
             <div class="card-body">
               <h5 class="card-title">Carine Red</h5>
               <p class="card-title">"Bold in red, classic in style"</p>
-             <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-
+              <p class="card-text">₹400</p>
               
             </div>
           </div>
@@ -137,8 +111,7 @@
             <div class="card-body">
               <h5 class="card-title">Kaki Brown</h5>
               <p class="card-title">"Earthy tones, effortless style"</p>
-             <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-
+              <p class="card-text">₹400</p>
               
             </div>
           </div>
@@ -150,8 +123,8 @@
             <div class="card-body">
               <h5 class="card-title">shepherd Grey</h5>
               <p class="card-title">"Cool grey checks with classic charm"</p>
-              <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-
+              <p class="card-text">₹400</p>
+             
             </div>
           </div>
         </div>
@@ -162,8 +135,8 @@
             <div class="card-body">
               <h5 class="card-title">Shepherd ebra Blue</h5>
               <p class="card-title">"Cool, crisp, and confidently blue"</p>
-             <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-
+              <p class="card-text">₹400</p>
+             
             </div>
           </div>
         </div>
@@ -183,8 +156,7 @@
              <p class="card-title">"Essential blue denim for any wardrobe"
 
 </p>
-           <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-
+              <p class="card-text">₹500</p>
               
             </div>
           </div>
@@ -197,8 +169,7 @@
             <div class="card-body">
               <h5 class="card-title">Grey Jeans</h5>
               <p class="card-title">"Classic grey denim jeans with a comfortable fit and timeless style"</p>
-              <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-
+              <p class="card-text">₹500</p>
               
             </div>
           </div>
@@ -210,8 +181,7 @@
             <div class="card-body">
               <h5 class="card-title">Blue Jeans</h5>
               <p class="card-title">Styled for comfort, built to last"</p>
-             <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-
+              <p class="card-text">₹500</p>
               
             </div>
           </div>
@@ -221,11 +191,9 @@
           <div class="card h-100">
             <img src="images/7.jpeg" class="card-img-top" alt="Product 9">
             <div class="card-body">
-              
               <h5 class="card-title">Blue Jeans</h5>
               <p class="card-title">Everyday blue jeans with a perfect blend of comfort and style"</p>
-              <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-
+              <p class="card-text">₹500</p>
              
             </div>
           </div>
@@ -237,8 +205,7 @@
             <div class="card-body">
               <h5 class="card-title">Blue Jeans</h5>
               <p class="card-title">Classic cut, modern comfort"</p>
-             <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-
+              <p class="card-text">₹500</p>
               
             </div>
           </div>
@@ -262,34 +229,7 @@
     <!-- Add more products as needed -->
   </div>
 </section>
-  <!-- Message Box Section -->
-<section class="container message-box">
-  <h3 class="mb-4 text-center">Send Us an Enquiry</h3>
-  <form id="enquiryForm">
-    <div class="mb-3">
-      <label for="name" class="form-label">Your Name</label>
-      <input type="text" class="form-control" id="name" required />
-    </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Your Email</label>
-      <input type="email" class="form-control" id="email" required />
-    </div>
-    <div class="mb-3">
-      <label for="message" class="form-label">Message</label>
-      <textarea class="form-control" id="message" rows="4" required></textarea>
-    </div>
-    <div class="text-center">
-      <button type="submit" class="btn btn-primary">Submit Enquiry</button>
-    </div>
-  </form>
-</section>
-
-<div class="container my-4">
-  <h4>Your Cart</h4>
-  <ul id="cart-items" class="list-group mb-3"></ul>
-  <p><strong>Total: ₹<span id="cart-total">0</span></strong></p>
-  <button id="place-order" class="btn btn-success">Place Order</button>
-</div>
+<a href="checkout.html" class="btn btn-success">Proceed to Checkout</a>
 
 <!-- Footer -->
 <footer class="bg-dark text-white text-center py-3 mt-5">
@@ -300,43 +240,3 @@
 </footer>
 
  
-
-
-
-<!-- Bootstrap JS CDN (for mobile navbar toggle) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  const cart = [];
-
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function () {
-      const name = this.dataset.name;
-      const price = parseInt(this.dataset.price);
-      const existingItem = cart.find(item => item.name === name);
-
-      if (existingItem) {
-        existingItem.qty += 1;
-      } else {
-        cart.push({ name, price, qty: 1 });
-      }
-
-      updateCartDisplay();
-    });
-  });
-
- <a href="checkout.html"><button>Go to Checkout</button></a>
-
-  <script>
-    function addToCart(name, price) {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      cart.push({ name, price });
-      localStorage.setItem("cart", JSON.stringify(cart));
-      alert(`${name} added to cart!`);
-    }
-  </script>
-</body>
-</html>
-</script>
-
-</body>
-</html>
