@@ -19,6 +19,20 @@
   </div>
 
   <script>
+    const orderData = JSON.parse(localStorage.getItem("latestOrder")) || [];
+const container = document.getElementById("order-details");
+
+if (orderData.length === 0) {
+  container.innerHTML = "<p>No recent order found.</p>";
+} else {
+  container.innerHTML = `
+    <h2>Thank you for your order!</h2>
+    <ul>
+      ${orderData.map(item => `<li>${item.name} - ₹${item.price}</li>`).join("")}
+    </ul>
+  `;
+}
+
     const cartData = JSON.parse(localStorage.getItem('lastOrder')) || [];
     const list = document.getElementById('receipt-list');
     let total = 0;
