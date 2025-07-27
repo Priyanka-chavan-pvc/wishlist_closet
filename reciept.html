@@ -19,7 +19,7 @@
   </div>
 
   <script>
-    const orderData = JSON.parse(localStorage.getItem("latestOrder")) || [];
+  const orderData = JSON.parse(localStorage.getItem("latestOrder")) || [];
 const container = document.getElementById("order-details");
 
 if (orderData.length === 0) {
@@ -32,6 +32,7 @@ if (orderData.length === 0) {
     </ul>
   `;
 }
+
 
     const cartData = JSON.parse(localStorage.getItem('lastOrder')) || [];
     const list = document.getElementById('receipt-list');
