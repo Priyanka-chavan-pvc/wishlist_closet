@@ -6,6 +6,65 @@
   <title>Checkout - Wishlist Closet</title>
 </head>
 <body>
+  <script>
+  const cart = [];
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function () {
+      const name = this.dataset.name;
+      const price = parseInt(this.dataset.price);
+      const existingItem = cart.find(item => item.name === name);
+
+      if (existingItem) {
+        existingItem.qty += 1;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+
+      updateCartDisplay();
+    });
+  });
+
+  function updateCartDisplay() {
+    const cartList = document.getElementById('cart-items');
+    const totalElement = document.getElementById('cart-total');
+    cartList.innerHTML = '';
+    let total = 0;
+
+    cart.forEach(item => {
+      total += item.price * item.qty;
+      const li = document.createElement('li');
+      li.className = 'list-group-item d-flex justify-content-between align-items-center';
+      li.innerHTML = `
+        ${item.name} (x${item.qty})
+        <span>₹${item.price * item.qty}</span>
+      `;
+      cartList.appendChild(li);
+    });
+
+    totalElement.textContent = total;
+  }
+
+  document.getElementById('place-order').addEventListener('click', function () {
+    if (cart.length === 0) {
+      alert('Your cart is empty!');
+      return;
+    }
+
+    let summary = 'Order Summary:\n\n';
+    cart.forEach(item => {
+      summary += `${item.name} x ${item.qty} = ₹${item.price * item.qty}\n`;
+    });
+
+    summary += `\nTotal: ₹${document.getElementById('cart-total').textContent}`;
+    summary += `\n\nThank you for shopping with Wishlist Closet!`;
+
+    alert(summary);
+    cart.length = 0;
+    updateCartDisplay();
+  });
+</script>
+
   <h2>Your Cart</h2>
   <ul id="cart-items"></ul>
   <button id="place-order">Place Order</button>
