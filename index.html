@@ -10,8 +10,13 @@
 </head>
   <!-- jQuery CDN -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
 
 <script>
+  document.getElementById("place-order").addEventListener("click", function() {
+  alert("Order placed!");
+});
+
   $('#enquiryForm').on('submit', function (e) {
     e.preventDefault();
     const name = $('#name').val();
