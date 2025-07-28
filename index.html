@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wishlist Closet</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-  {
+    {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f8f9fa;
       color: #333;
     }
+
     .navbar-brand {
       font-weight: 700;
     }
+
     .hero {
       background-color: #e9f1ff;
       padding: 60px 0;
       text-align: center;
     }
+
     .hero h1 {
       font-size: 3rem;
     }
+
     .hero p {
       font-size: 1.2rem;
     }
+
     .product-section h2 {
       text-align: center;
       margin-bottom: 30px;
     }
+
     .product-card {
       border: 1px solid #ddd;
       border-radius: 8px;
@@ -38,32 +45,39 @@
       background-color: #fff;
       text-align: center;
     }
+
     .product-card:hover {
       transform: scale(1.03);
     }
+
     .product-card img {
       width: 100%;
       height: 250px;
       object-fit: cover;
     }
+
     .product-card h5 {
       margin-top: 15px;
       font-weight: 600;
     }
+
     .product-card p {
       color: #777;
       font-size: 0.95rem;
       padding: 0 10px;
     }
+
     .product-card .btn {
       margin: 10px 0 20px;
     }
+
     .cart-section {
       background: #fff;
       border-radius: 10px;
       padding: 20px;
       margin-top: 40px;
     }
+
     footer {
       background-color: #111;
       color: #fff;
@@ -75,9 +89,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
+
 </html>
 
-  <script>
+<script>
   const cart = [];
 
   document.querySelectorAll('.add-to-cart').forEach(button => {
@@ -106,14 +121,14 @@
       total += item.price * item.qty;
       const li = document.createElement('li');
       li.className = 'list-group-item d-flex justify-content-between align-items-center';
-      li.innerHTML = 
-        ${item.name} (x${item.qty})
-        <span>₹${item.price * item.qty}</span>
+      li.innerHTML =
+        ${ item.name } (x${ item.qty })
+      < span >₹${ item.price * item.qty }</span >
       ;
-      cartList.appendChild(li);
-    });
+    cartList.appendChild(li);
+  });
 
-    totalElement.textContent = total;
+  totalElement.textContent = total;
   }
 
   document.getElementById('place-order').addEventListener('click', function () {
@@ -124,10 +139,10 @@
 
     let summary = 'Order Summary:\n\n';
     cart.forEach(item => {
-      summary += ${item.name} x ${item.qty} = ₹${item.price * item.qty}\n;
+      summary += ${ item.name } x ${ item.qty } = ₹${ item.price * item.qty } \n;
     });
 
-    summary += \nTotal: ₹${document.getElementById('cart-total').textContent};
+    summary += \nTotal: ₹${ document.getElementById('cart-total').textContent };
     summary += \n\nThank you for shopping with Wishlist Closet!;
 
     alert(summary);
@@ -138,16 +153,16 @@
 
 
 <!-- Navbar -->
-  </nav>
+</nav>
 
 <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>Welcome to Wishlist Closet</h1>
-      <p>Find the best deals on top-quality Korean Brands</p>
-      <a href="#products" class="btn btn-primary">Shop Now</a>
-    </div>
-  </section>
+<section class="hero">
+  <div class="container">
+    <h1>Welcome to Wishlist Closet</h1>
+    <p>Find the best deals on top-quality Korean Brands</p>
+    <a href="#products" class="btn btn-primary">Shop Now</a>
+  </div>
+</section>
 
 <!-- Product Listing -->
 <section class="container my-5">
@@ -157,205 +172,212 @@
   <div class="row g-3">
     <!-- Product Card -->
     <div id="mainCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <!-- Slide 1 -->
-    <div class="carousel-item active">
-      <img src="images/1.jpeg" class="d-block w-100" alt="Shop with us">
-    </div>
-    <!-- Slide 2 -->
-    <div class="carousel-item">
-      <img src="images/2.jpeg" class="d-block w-100" alt="New Arrivals">
-    </div>
-    <!-- Slide 3 -->
-    <div class="carousel-item">
-      <img src="images/3.jpeg" class="d-block w-100" alt="New arrivals">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="images/1.jpeg" class="d-block w-100" alt="Shop with us">
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="images/2.jpeg" class="d-block w-100" alt="New Arrivals">
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="images/3.jpeg" class="d-block w-100" alt="New arrivals">
+        </div>
+      </div>
+
+
+
+
+      <!-- Repeat this product card for more items -->
+      <section class="hero">
+        <div class="container">
+          <h1>Welcome to Wishlist Closet</h1>
+          <p>Find the best deals on top-quality Korean Brands</p>
+          <a href="#products" class="btn btn-primary">Shop Now</a>
+        </div>
+      </section>
+
+    
+
     </div>
   </div>
 
-
-
-     
-    <!-- Repeat this product card for more items -->
-<section class="hero">
-    <div class="container">
-      <h1>Welcome to Wishlist Closet</h1>
-      <p>Find the best deals on top-quality Korean Brands</p>
-      <a href="#products" class="btn btn-primary">Shop Now</a>
-    </div>
-  </section>
-
-  <!-- Product Section -->
-  <section id="products" class="container product-section my-5">
-    <h2>Featured Products</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <div class="col">
-        <div class="product-card">
-          <img src="images/sepherd.jpeg" alt="Shepherd check white">
-          <h5>Shepherd check white</h5>
-          <p>Classic white checks for a crisp, clean look.</p>
-          <button class="btn btn-sm btn-primary">Add to Cart</button>
-        </div>
-      </div>
-      <div class="col">
-        <div class="product-card">
-          <img src="images/red.jpeg" alt="Carine Red">
-          <h5>Carine Red</h5>
-          <p>Bold in red, classic in style.</p>
-          <button class="btn btn-sm btn-primary">Add to Cart</button>
-        </div>
-      </div>
-      <div class="col">
-        <div class="product-card">
-          <img src="images/kaki.jpeg" alt="Kaki Brown">
-          <h5>Kaki Brown</h5>
-          <p>Earthy tones, effortless style.</p>
-          <button class="btn btn-sm btn-primary">Add to Cart</button>
-        </div>
-      </div>
-      <div class="col">
-        <div class="product-card">
-          <img src="images/grey.jpeg" alt="Shepherd Grey">
-          <h5>Shepherd Grey</h5>
-          <p>Cool grey checks with classic charm.</p>
-          <button class="btn btn-sm btn-primary">Add to Cart</button>
-        </div>
-      </div>
-      <div class="col">
-        <div class="product-card">
-          <img src="images/cblue.jpeg" alt="Shepherd Zebra Blue">
-          <h5>Shepherd Zebra Blue</h5>
-          <p>Cool, crisp, and confidently blue.</p>
-          <button class="btn btn-sm btn-primary">Add to Cart</button>
-        </div>
-      </div>
-      <div class="col">
-        <div class="product-card">
-          <img src="images/4.jpeg" alt="Blue Jeans">
-          <h5>Blue Jeans</h5>
-          <p>Essential blue denim for any wardrobe.</p>
-          <button class="btn btn-sm btn-primary">Add to Cart</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- Right Column: 5 Products -->
-    <div class="col-md-5">
-      <h4 class="mb-3">BOTTOM WEAR </h4>
-      <div class="row g-3">
-        <!-- Product 6 -->
-        <div class="col-md-6">
-          <div class="card h-100">
-            <img src="images/4.jpeg" class="card-img-top" alt="Product 6" "width:100%">
-            <div class="card-body">
-              <h5 class="card-title">Blue Jeans</h5>
-             <p class="card-title">"Essential blue denim for any wardrobe"
-
-</p><button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-<!-- Cart Link -->
-<div style="text-align: center;">
-  <a href="checkout.html" class="cart-button">Go to Checkout</a>
-</div>
-              
-            </div>
-          </div>
-        </div>
-
-        <!-- Repeat -->
-    <div class="col">
-        <div class="product-card">
-            <img src="images/5.jpeg" class="card-img-top" alt="Product 7" "width:100%">
-            <div class="card-body">
-              <h5 class="card-title">Grey Jeans</h5>
-              <p class="card-title">"Classic grey denim jeans with a comfortable fit and timeless style"</p>
-            <button class="btn btn-sm btn-primary">Add to Cart</button>
-<!-- Cart Link -->
-<div style="text-align: center;">
-  <a href="checkout.html" class="cart-button">Go to Checkout</a>
-</div>
-              
-            </div>
-          </div>
-        </div>
- <div class="col">
-        <div class="product-card">
-            <img src="images/6.jpeg" class="card-img-top" alt="Product 8" "width:100%">
-            <div class="card-body">
-              <h5 class="card-title">Blue Jeans</h5>
-              <p class="card-title">Styled for comfort, built to last"</p>
-            <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-
-           
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-        <div class="product-card">
-            <img src="images/7.jpeg" class="card-img-top" alt="Product 9" "width:100%">
-            <div class="card-body">
-              <h5 class="card-title">Blue Jeans</h5>
-              <p class="card-title">Everyday blue jeans with a perfect blend of comfort and style"</p>
-              <p class="card-text">₹500</p>
-             <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-     </div>
-          </div>
-        </div>
-
-        <div class="col">
-        <div class="product-card">
-            <img src="images/8.jpeg" class="card-img-top" alt="Product 10" "width:100%">
-            <div class="card-body">
-              <h5 class="card-title">Blue Jeans</h5>
-              <p class="card-title">Classic cut, modern comfort"</p>
-            <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- script.js -->
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
-</body>
-</html>
+  </body>
+
+  </html>
 
 
 
- 
 
-    <!-- Add more products as needed -->
+
+  <!-- Add more products as needed -->
   </div>
 </section>
-  <!-- Cart Section -->
-  <section class="container cart-section">
-    <h4>Your Cart</h4>
-    <ul id="cart-items" class="list-group mb-3"></ul>
-    <p><strong>Total: ₹<span id="cart-total">0</span></strong></p>
-    <button id="place-order" class="btn btn-success">Place Order</button>
-    <a href="checkout.html" class="btn btn-outline-primary">Go to Checkout</a>
-  </section>
+
+<section class="container my-5">
+    <!-- Product Section -->
+      <section id="products" class="container product-section my-5">
+        <h2>Featured Products</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="product-card">
+              <img src="images/sepherd.jpeg" alt="Shepherd check white">
+              <h5>Shepherd check white</h5>
+              <p>Classic white checks for a crisp, clean look.</p>
+              <button class="btn btn-sm btn-primary">Add to Cart</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="product-card">
+              <img src="images/red.jpeg" alt="Carine Red">
+              <h5>Carine Red</h5>
+              <p>Bold in red, classic in style.</p>
+              <button class="btn btn-sm btn-primary">Add to Cart</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="product-card">
+              <img src="images/kaki.jpeg" alt="Kaki Brown">
+              <h5>Kaki Brown</h5>
+              <p>Earthy tones, effortless style.</p>
+              <button class="btn btn-sm btn-primary">Add to Cart</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="product-card">
+              <img src="images/grey.jpeg" alt="Shepherd Grey">
+              <h5>Shepherd Grey</h5>
+              <p>Cool grey checks with classic charm.</p>
+              <button class="btn btn-sm btn-primary">Add to Cart</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="product-card">
+              <img src="images/cblue.jpeg" alt="Shepherd Zebra Blue">
+              <h5>Shepherd Zebra Blue</h5>
+              <p>Cool, crisp, and confidently blue.</p>
+              <button class="btn btn-sm btn-primary">Add to Cart</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="product-card">
+              <img src="images/4.jpeg" alt="Blue Jeans">
+              <h5>Blue Jeans</h5>
+              <p>Essential blue denim for any wardrobe.</p>
+              <button class="btn btn-sm btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: 5 Products -->
+      <div class="col-md-5">
+        <h4 class="mb-3">BOTTOM WEAR </h4>
+        <div class="row g-3">
+          <!-- Product 6 -->
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="images/4.jpeg" class="card-img-top" alt="Product 6" "width:100%">
+              <div class="card-body">
+                <h5 class="card-title">Blue Jeans</h5>
+                <p class="card-title">"Essential blue denim for any wardrobe"
+
+                </p><button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white"
+                  data-price="400">Add to Cart</button>
+                <!-- Cart Link -->
+                <div style="text-align: center;">
+                  <a href="checkout.html" class="cart-button">Go to Checkout</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Repeat -->
+          <div class="col">
+            <div class="product-card">
+              <img src="images/5.jpeg" class="card-img-top" alt="Product 7" "width:100%">
+              <div class="card-body">
+                <h5 class="card-title">Grey Jeans</h5>
+                <p class="card-title">"Classic grey denim jeans with a comfortable fit and timeless style"</p>
+                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                <!-- Cart Link -->
+                <div style="text-align: center;">
+                  <a href="checkout.html" class="cart-button">Go to Checkout</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="product-card">
+              <img src="images/6.jpeg" class="card-img-top" alt="Product 8" "width:100%">
+              <div class="card-body">
+                <h5 class="card-title">Blue Jeans</h5>
+                <p class="card-title">Styled for comfort, built to last"</p>
+                <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add
+                  to Cart</button>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="product-card">
+              <img src="images/7.jpeg" class="card-img-top" alt="Product 9" "width:100%">
+              <div class="card-body">
+                <h5 class="card-title">Blue Jeans</h5>
+                <p class="card-title">Everyday blue jeans with a perfect blend of comfort and style"</p>
+                <p class="card-text">₹500</p>
+                <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add
+                  to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="product-card">
+              <img src="images/8.jpeg" class="card-img-top" alt="Product 10" "width:100%">
+              <div class="card-body">
+                <h5 class="card-title">Blue Jeans</h5>
+                <p class="card-title">Classic cut, modern comfort"</p>
+                <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add
+                  to Cart</button>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+</section>
+<!-- Cart Section -->
+<section class="container cart-section">
+  <h4>Your Cart</h4>
+  <ul id="cart-items" class="list-group mb-3"></ul>
+  <p><strong>Total: ₹<span id="cart-total">0</span></strong></p>
+  <button id="place-order" class="btn btn-success">Place Order</button>
+  <a href="checkout.html" class="btn btn-outline-primary">Go to Checkout</a>
+</section>
 
 </div>
 
 <!-- Footer -->
 <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Wishlist Closet. Made in Korea</p>
-    <p>Whatsapp: +919016342318 / +918734949398 | Email: shivamkharwar18@gmail.com</p>
-  </footer>
- <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<footer>
+  <p>&copy; 2025 Wishlist Closet. Made in Korea</p>
+  <p>Whatsapp: +919016342318 / +918734949398 | Email: shivamkharwar18@gmail.com</p>
+</footer>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
-
-
-
