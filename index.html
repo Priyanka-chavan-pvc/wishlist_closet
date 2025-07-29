@@ -7,200 +7,70 @@
   <title>Wishlist Closet</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- <style>
-    {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-
-    .navbar-brand {
-      font-weight: 700;
-    }
-
-    .hero {
-      background-color: #e9f1ff;
-      padding: 60px 0;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-    }
-
-    .product-section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .product-card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      background-color: #fff;
-      text-align: center;
-    }
-
-    .product-card:hover {
-      transform: scale(1.03);
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-
-    .product-card h5 {
-      margin-top: 15px;
-      font-weight: 600;
-    }
-
-    .product-card p {
-      color: #777;
-      font-size: 0.95rem;
-      padding: 0 10px;
-    }
-
-    .product-card .btn {
-      margin: 10px 0 20px;
-    }
-
-    .cart-section {
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    footer {
-      background-color: #111;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
-  </style> -->
 </head>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
-<script>
-  const cart = [];
 
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function () {
-      const name = this.dataset.name;
-      const price = parseInt(this.dataset.price);
-      const existingItem = cart.find(item => item.name === name);
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Wishlist Closet</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
 
-      if (existingItem) {
-        existingItem.qty += 1;
-      } else {
-        cart.push({ name, price, qty: 1 });
-      }
+  <!-- Hero Section -->
+  <section class="hero bg-light py-5 text-center">
+    <div class="container">
+      <h1 class="display-4">Welcome to Wishlist Closet</h1>
+      <p class="lead">Find the best deals on top-quality Korean Brands</p>
+      <a href="#products" class="btn btn-primary">Shop Now</a>
+    </div>
+  </section>
 
-      updateCartDisplay();
-    });
-  });
-
-  function updateCartDisplay() {
-    const cartList = document.getElementById('cart-items');
-    const totalElement = document.getElementById('cart-total');
-    cartList.innerHTML = '';
-    let total = 0;
-
-    cart.forEach(item => {
-      total += item.price * item.qty;
-      const li = document.createElement('li');
-      li.className = 'list-group-item d-flex justify-content-between align-items-center';
-      li.innerHTML =
-        ${ item.name } (x${ item.qty })
-      < span >₹${ item.price * item.qty }</span >
-      ;
-    cartList.appendChild(li);
-  });
-
-  totalElement.textContent = total;
-  }
-
-  document.getElementById('place-order').addEventListener('click', function () {
-    if (cart.length === 0) {
-      alert('Your cart is empty!');
-      return;
-    }
-
-    let summary = 'Order Summary:\n\n';
-    cart.forEach(item => {
-      summary += ${ item.name } x ${ item.qty } = ₹${ item.price * item.qty } \n;
-    });
-
-    summary += \nTotal: ₹${ document.getElementById('cart-total').textContent };
-    summary += \n\nThank you for shopping with Wishlist Closet!;
-
-    alert(summary);
-    cart.length = 0;
-    updateCartDisplay();
-  });
-</script>
-
-
-<!-- Navbar -->
-
-
-<!-- Hero Section -->
-<section class="hero">
-  <div class="container">
-    <h1>Welcome to Wishlist Closet</h1>
-    <p>Find the best deals on top-quality Korean Brands</p>
-    <a href="#products" class="btn btn-primary">Shop Now</a>
+  <!-- Carousel -->
+  <div id="mainCarousel" class="carousel slide mb-5 container" data-bs-ride="carousel">
+    <div class="carousel-inner rounded">
+      <div class="carousel-item active">
+        <img src="images/1.jpeg" class="d-block w-100" alt="Shop with us">
+      </div>
+      <div class="carousel-item">
+        <img src="images/2.jpeg" class="d-block w-100" alt="New Arrivals">
+      </div>
+      <div class="carousel-item">
+        <img src="images/3.jpeg" class="d-block w-100" alt="New arrivals">
+      </div>
+    </div>
   </div>
-</section>
 
-<!-- Product Listing -->
-<section class="container my-5">
-  <div class="row text-center mb-4">
-    <h2>Featured Products</h2>
-  </div>
-  <div class="row">
-    <!-- Product Card -->
-    <div id="mainCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <img src="images/1.jpeg" class="d-block w-100" alt="Shop with us">
-        </div>
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <img src="images/2.jpeg" class="d-block w-100" alt="New Arrivals">
-        </div>
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-          <img src="images/3.jpeg" class="d-block w-100" alt="New arrivals">
+  <!-- Product Section -->
+  <section class="container my-5" id="products">
+    <h2 class="text-center mb-4">Featured Products</h2>
+    <div class="row g-4">
+      <!-- Product Cards -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 text-center">
+          <img src="images/sepherd.jpeg" class="card-img-top" alt="Shepherd check white">
+          <div class="card-body">
+            <h5 class="card-title">Shepherd check white</h5>
+            <p class="card-text">Classic white checks for a crisp, clean look.</p>
+            <button class="btn btn-sm btn-primary add-to-cart" data-name="Shepherd check white" data-price="400">Add to Cart</button>
+          </div>
         </div>
       </div>
 
-
-
-
-      <!-- Repeat this product card for more items -->
-      <section class="hero">
-        <div class="container">
-          <h1>Welcome to Wishlist Closet</h1>
-          <p>Find the best deals on top-quality Korean Brands</p>
-          <a href="#products" class="btn btn-primary">Shop Now</a>
+      <!-- Repeat for other products... -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 text-center">
+          <img src="images/red.jpeg" class="card-img-top" alt="Carine Red">
+          <div class="card-body">
+            <h5 class="card-title">Carine Red</h5>
+            <p class="card-text">Bold in red, classic in style.</p>
+            <button class="btn btn-sm btn-primary add-to-cart" data-name="Carine Red" data-price="350">Add to Cart</button>
+          </div>
         </div>
-      </section>
-
-
-
-    </div>
-  </div>
-</section>
-
+      </div>
 <!-- Add more products as needed -->
 
 
@@ -288,24 +158,72 @@
   </div>
   </section>
 
-<!-- Cart Section -->
-<section class="container cart-section">
-  <h4>Your Cart</h4>
-  <ul id="cart-items" class="list-group mb-3"></ul>
-  <p><strong>Total: ₹<span id="cart-total">0</span></strong></p>
-  <button id="place-order" class="btn btn-success">Place Order</button>
-  <a href="checkout.html" class="btn btn-outline-primary">Go to Checkout</a>
-</section>
+ <section class="container cart-section bg-white p-4 rounded shadow-sm my-5">
+    <h4>Your Cart</h4>
+    <ul id="cart-items" class="list-group mb-3"></ul>
+    <p><strong>Total: ₹<span id="cart-total">0</span></strong></p>
+    <button id="place-order" class="btn btn-success">Place Order</button>
+    <a href="checkout.html" class="btn btn-outline-primary">Go to Checkout</a>
+  </section>
 
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Wishlist Closet. Made in Korea</p>
+    <p>Whatsapp: +919016342318 / +918734949398 | Email: shivamkharwar18@gmail.com</p>
+  </footer>
 
-<!-- Footer -->
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Wishlist Closet. Made in Korea</p>
-  <p>Whatsapp: +919016342318 / +918734949398 | Email: shivamkharwar18@gmail.com</p>
-</footer>
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const cart = [];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function () {
+          const name = this.dataset.name;
+          const price = parseInt(this.dataset.price);
+          const existingItem = cart.find(item => item.name === name);
+          if (existingItem) {
+            existingItem.qty += 1;
+          } else {
+            cart.push({ name, price, qty: 1 });
+          }
+          updateCartDisplay();
+        });
+      });
+
+      document.getElementById('place-order').addEventListener('click', () => {
+        if (cart.length === 0) {
+          alert('Your cart is empty!');
+          return;
+        }
+        let summary = 'Order Summary:\n\n';
+        cart.forEach(item => {
+          summary += `${item.name} x ${item.qty} = ₹${item.price * item.qty}\n`;
+        });
+        summary += `\nTotal: ₹${document.getElementById('cart-total').textContent}`;
+        summary += '\n\nThank you for shopping with Wishlist Closet!';
+        alert(summary);
+        cart.length = 0;
+        updateCartDisplay();
+      });
+    });
+
+    function updateCartDisplay() {
+      const cartList = document.getElementById('cart-items');
+      const totalElement = document.getElementById('cart-total');
+      cartList.innerHTML = '';
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price * item.qty;
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+        li.innerHTML = `${item.name} (x${item.qty}) <span>₹${item.price * item.qty}</span>`;
+        cartList.appendChild(li);
+      });
+      totalElement.textContent = total;
+    }
+  </script>
 </body>
 
 </html>
